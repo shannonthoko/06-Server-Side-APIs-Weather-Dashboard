@@ -7,6 +7,7 @@ $("#temp").empty();
 $("#humidity").empty();
 $("#windspeed").empty();
 $("#uvi").empty();
+$("#five-day").empty();
 
 event.preventDefault();
 
@@ -63,6 +64,7 @@ $.ajax({
             var responseToday = secondResponse.dt ;
             var date = Date(responseToday);
             var today = date.toLocaleString();
+           
             
             //appending elements to page for current day
             $("#city-name").append(today);
@@ -108,8 +110,15 @@ $.ajax({
 
             };
 
-            $("#five-day").append(fiveDayTempDiv);
-            $("#five-day").append(fiveDayHumidityDiv);
+            //saved search
+
+            localStorage.setItem("city", cityText);
+            var savedCity = localStorage.getItem("city");
+            var savedDiv = $("<li>");
+            savedDiv.append(savedCity);
+            $("#saved-search").prepend(savedDiv);
+
+
 
          
             
