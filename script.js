@@ -81,22 +81,35 @@ $.ajax({
                 var kelvinFiveDay = secondResponse.daily[i].temp.day;
                 var farenheitFiveDay = (kelvinFiveDay - 273.15) * 9/5 + 32;
                 farenheitFiveDay = parseFloat(farenheitFiveDay).toFixed(2);
-
                 var humidityFiveDay = secondResponse.daily[i].humidity;
-                console.log(humidityFiveDay);
+                var iconFiveDay = "http://openweathermap.org/img/wn/" + secondResponse.daily[i].weather[0].icon + "@2x.png";
+                /*var responseFiveDay = secondResponse.daily[i].dt;
+                var fiveDayDate = Date(responseFiveDay);
+                var fiveDates = responseFiveDay.toLocaleString();*/
+                
+
                 var fiveDayTempDiv = $("<div>");
-                var fiveDayHumidityDiv = $("<div>")
+                var fiveDayHumidityDiv = $("<div>");
+                //var fiveDayTimeDiv = $("<div>");
+                //fiveDayTimeDiv.append(fiveDates);
                 fiveDayTempDiv.append(farenheitFiveDay + " F" );
                 fiveDayHumidityDiv.append(humidityFiveDay + "%");
+
+                var imgFiveDay = $('<img>');
+                imgFiveDay.attr('src', iconFiveDay);
+                $("#five-day").append(imgFiveDay);
                  
+              
+                //$("#five-day").append(fiveDayTimeDiv);
                 $("#five-day").append(fiveDayTempDiv);
                 $("#five-day").append(fiveDayHumidityDiv);
 
 
 
-
-
             };
+
+            $("#five-day").append(fiveDayTempDiv);
+            $("#five-day").append(fiveDayHumidityDiv);
 
          
             
