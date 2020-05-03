@@ -6,7 +6,7 @@ $(document).ready(function(){
         
         
         $("input").attr("placeholder", localStorage.getItem("city"));
-        //$("input").text(localStorage.getItem("city"))
+       
     };
     
     $("#search-button").on("click", function(event){
@@ -77,10 +77,8 @@ $(document).ready(function(){
                 var responseToday = secondResponse.dt ;
                 var date = Date(responseToday);
                 var today = date.toLocaleString();
+
                 //appending elements to page for current day
-                
-                
-                
                 $("#city-name").append(today);
                 $("#temp").append("Temperature: " + farenheit + " F");
                 $("#humidity").append("Humidity: " + humidity + "%");
@@ -110,21 +108,17 @@ $(document).ready(function(){
                     farenheitFiveDay = parseFloat(farenheitFiveDay).toFixed(2);
                     var humidityFiveDay = secondResponse.daily[i].humidity;
                     var iconFiveDay = "http://openweathermap.org/img/wn/" + secondResponse.daily[i].weather[0].icon + "@2x.png";
-                    /*var responseFiveDay = secondResponse.daily[i].dt;
-                    var fiveDayDate = Date(responseFiveDay);
-                    var fiveDates = responseFiveDay.toLocaleString();*/
+  
                     
                     var currentDate = $("<div>");
                     var fiveDayTempDiv = $("<div>");
                     var fiveDayHumidityDiv = $("<div>");
-                    //var fiveDayTimeDiv = $("<div>");
-                    //fiveDayTimeDiv.append(fiveDates);
+                   
                     currentDate.append(tomorrow);
                     fiveDayTempDiv.append("Temperature: "+farenheitFiveDay + " F" );
                     fiveDayHumidityDiv.append("Humidity: "+ humidityFiveDay + "%");
                     
                     
-                    //$("#five-day").append(fiveDayTimeDiv);
                     
                     $("#five-day").append(currentDate);
                     
@@ -149,11 +143,7 @@ $(document).ready(function(){
                 buttonSaved.text(savedCity);
                 $("#saved-search").prepend(buttonSaved);
                 
-                //open to last 
-                if (localStorage.getItem("city")){
-            
-                    $("#search-input").append(savedCity);
-                };
+               
                 //search history button to search city again
                 buttonSaved.on("click", function(event){
                     
