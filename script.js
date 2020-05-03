@@ -1,8 +1,6 @@
 $(document).ready(function(){
     
     
-
-    
     
     if (localStorage.getItem("city")){
         
@@ -69,6 +67,7 @@ $(document).ready(function(){
                 } else if (3 < UVI < 5 ){
                     
                     $("#uvi").css('color', 'orange');
+                    
                 }else if ( UVI < 3){
                     
                     $("#uvi").css('color', 'green');
@@ -121,8 +120,8 @@ $(document).ready(function(){
                     //var fiveDayTimeDiv = $("<div>");
                     //fiveDayTimeDiv.append(fiveDates);
                     currentDate.append(tomorrow);
-                    fiveDayTempDiv.append(farenheitFiveDay + " F" );
-                    fiveDayHumidityDiv.append(humidityFiveDay + "%");
+                    fiveDayTempDiv.append("Temperature: "+farenheitFiveDay + " F" );
+                    fiveDayHumidityDiv.append("Humidity: "+ humidityFiveDay + "%");
                     
                     
                     //$("#five-day").append(fiveDayTimeDiv);
@@ -143,6 +142,8 @@ $(document).ready(function(){
                 
                 localStorage.setItem("city", cityText);
                 var savedCity = localStorage.getItem("city");
+
+                
                 
                 var buttonSaved = $("<button>");
                 buttonSaved.text(savedCity);
