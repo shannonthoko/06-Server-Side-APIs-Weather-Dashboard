@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!--css-->
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
     <!--Bootstrap Responsive Design-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--css-->
-    <link rel = "stylesheet" href = "style.css">
 
     <title>Weather Dashboard</title>
 </head>
@@ -32,11 +32,8 @@
                   <button type="button" class="btn btn-secondary" id = "search-button">Search</button>
                 </div>
                
-
-                  <div class="card" style="width: 17rem;">
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item" id = "saved-search"></li>
-                    </ul>
+                  <div class="card" id = "saved-search" style="width: 17rem;">
+   
                   </div>
                 
               </div>
@@ -44,11 +41,13 @@
           <div class = "col-md-8">
             <div class="card" id = "main-output">
                 <div class="card-header" class = "header"id = "city-name"></div>
-                <div class="card-body">
+                <div class="card-body" id = "main-output">
                   <div id = "temp"></div>
                   <div id = "humidity"></div>
                   <div id = "windspeed"></div>
                   <div id = "uvi"></div>
+                  <br>
+                  <br>
                   <div class = row>
                     <div id = "five-day"></div>
                   </div>
