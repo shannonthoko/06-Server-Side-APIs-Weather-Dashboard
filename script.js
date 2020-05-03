@@ -5,13 +5,14 @@ $(document).ready(function(){
     if (localStorage.getItem("city")){
         
         
-        $("input").attr("placeholder", localStorage.getItem("city"));
-       
+        //$("input").attr("placeholder", localStorage.getItem("city"));
+        $("#search-input").val(localStorage.getItem("city"));
     };
     
     $("#search-button").on("click", function(event){
         
         event.preventDefault();
+        
         
         
         $("#city-name").empty();    
